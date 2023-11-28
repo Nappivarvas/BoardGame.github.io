@@ -16,3 +16,12 @@ class Game(models.Model):
 
 
 
+class Loan(models.Model):
+    # The name of the game and who is loaning it
+    game = models.Charfield(max_length=200)
+    loaner = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.Charfield(max_length=200)
+    loan_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text 

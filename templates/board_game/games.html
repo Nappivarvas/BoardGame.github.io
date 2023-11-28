@@ -1,4 +1,4 @@
-{% extends 'BoardGame.github.io/base.html' %}
+{% extends 'board_game/base.html' %}
 
 {% block page_header %}
     <h1>Games</h1>
@@ -9,7 +9,7 @@
 <ul class="list-group border-bottom pb-2 mb-4">
     {% for game in gamess %}
         <li class="list-group-item border-0">
-            <a href="{% url 'BoardGames.github.io:game' game.id %}">
+            <a href="{% url 'board_game:game' game.id %}">
                 {{ game.text }}</a>
         </li>
     {% empty %}
@@ -17,7 +17,7 @@
     {% endfor %}
 </ul>
 
-<a href="{% url 'BoardGames.github.io:add_game' %}">Add a new game</a>
+<a href="{% url 'board_game:add_game' %}">Add a new game</a>
 
 
 {% endblock content %}
