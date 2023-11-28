@@ -1,0 +1,23 @@
+{% extends 'BoardGame.github.io/base.html' %}
+
+{% block page_header %}
+    <h1>Games</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+<ul class="list-group border-bottom pb-2 mb-4">
+    {% for game in gamess %}
+        <li class="list-group-item border-0">
+            <a href="{% url 'BoardGames.github.io:game' game.id %}">
+                {{ game.text }}</a>
+        </li>
+    {% empty %}
+        <li class="list-group-item border-0">No games have been added yet.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'BoardGames.github.io:add_game' %}">Add a new game</a>
+
+
+{% endblock content %}

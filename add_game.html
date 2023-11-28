@@ -1,0 +1,12 @@
+{% extends "BoardGame.github.io/base.html" %}
+
+{% block content %}
+	<p>Add a new game:</p>
+
+	<form action="{% url 'BoardGame.github.io:add_game' %}" method='post'>
+		{% csrf_token %}
+		{{ form.as_div }}
+		<button name="submit">Add game</button>
+	</form>
+
+{% endblock content %}
